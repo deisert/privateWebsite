@@ -1,32 +1,37 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Background from '../components/Background';
+import React, { useState } from 'react';
 
 export default function Home() {
+  
   return (
-    <div className="container">
+    <>
+    <div className="container"> 
       <Head>
         <title>Create Next App</title>
       </Head>
 
       <main>
+      
         <h1 className="title">
           Welcome to my website <a href="https://nextjs.org">Next.js!</a>
         </h1>
+        <Background/>
 
-        
       </main>
 
       <footer>
-        <p>this website was made using next.js</p>
+        <p>this website was made using <a href="https://nextjs.org">Next.js</a></p>
       </footer>
 
       <style jsx>{`
         .container {
           min-height: 100vh;
-          padding: 0 0.5rem;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
+    
         }
 
         main {
@@ -45,16 +50,12 @@ export default function Home() {
           display: flex;
           justify-content: center;
           align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
+          background: #ccc;
         }
 
         footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          
+
         }
 
         a {
@@ -82,20 +83,6 @@ export default function Home() {
         .title,
         .description {
           text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
 
         .grid {
@@ -165,5 +152,6 @@ export default function Home() {
         }
       `}</style>
     </div>
+    </>
   )
 }
