@@ -63,7 +63,6 @@ export default function Background(props) {
             retina_detect: true
         }}
         style={bgStyle}
-
     />
     )
 }

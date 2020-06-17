@@ -1,91 +1,129 @@
 import Head from 'next/head';
 import Background from '../components/Background';
 import React, { useState } from 'react';
+import ReactFullpage from '@fullpage/react-fullpage';
 
 export default function Home() {
   
   return (
-    <>
-    <div className="container"> 
+    <div> 
       <Head>
-        <title>Create Next App</title>
+        <title>Dominik Eisert </title>
       </Head>
 
-      <main>
+      <div className="section">
+      <main className="grid-container">
+        <div className="pictureLeft">
+          <img className="bPic" src="/pic.jpg" alt="Bewerbungsfoto in Schwarz Weiß" />
+        </div>
+        <div className="contentRight">
+          <button className ="aboutMeButton">About Me </button>
+          <button className="cvButton">CV</button>
+          <button className="contactMeButton">Contact Me</button>  
+        
+
+        <div className="aboutMe">
+          <h2>I am studying E-Commerce in Würzburg at the Fachhochschule Würzburg-Schweinfurt (FHWS) and currently I am in my 4th semester.</h2>
+        </div>
+        <div className="cv"></div>
+        <div className="ContactMe"></div>
       
-        <h1 className="title">
-          Welcome to my website <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-        <Background/>
-
+        </div>
+        {/* <Background/> */}
       </main>
-
-      <footer>
-        <p>this website was made using <a href="https://nextjs.org">Next.js</a></p>
-      </footer>
+      </div>
+      <div className ="section">
+      <p>test</p>
+      </div>
+       <footer>
+        <p>This website was made using React and <a href="https://nextjs.org">Next.js</a>.</p>
+      </footer> */}
 
       <style jsx>{`
-        .container {
-          min-height: 100vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-    
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        overflow: auto; 
+      }
+
+        .pictureLeft { 
+          grid-area: 1 / 1 / 6 / 3; 
+          background: black; 
+          height: 100vh; 
+        }
+        .contentRight { 
+          grid-area: 1 / 3 / 6 / 6; 
+          overflow: hidden; 
         }
 
-        main {
+          /* main {
           padding: 5rem 0;
           flex: 1;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          */
+
+        {/* .contentRight {
+            width: calc(100% - 175px);
+            left: 175px;
+            height: calc(100% + 50px);
+            float: left;
+            position: relative;
+        } */}
+
+        .bPic {
+          width: auto; 
+          height: 50vh;
+          border-radius: 60%;   
+          margin-left: auto; 
+          margin-right: auto; 
+          display: flex; 
+          overflow: scroll;
+        } 
+
+        img {
+          overflow: hidden; 
         }
 
         footer {
           width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background: #ccc;
-        }
-
-        footer a {
-          
-
+          height: 5%;
+          left: 0; 
+          bottom: 0; 
+          position: fixed; 
+          text-align: center;
+          background: #999999;
+          font-size: big; 
         }
 
         a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
+          color: blue;
           text-decoration: underline;
         }
 
         .title {
+          text-align: center;
           margin: 0;
           line-height: 1.15;
           font-size: 4rem;
         }
 
-        .title,
-        .description {
-          text-align: center;
+        .secondTitle {
+            margin-top: 10%;
+            text-align: center;  
+        }
+        
+        footer:hover {
+          background: #888888; 
         }
 
-        .grid {
+        /* .grid {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -93,9 +131,9 @@ export default function Home() {
 
           max-width: 800px;
           margin-top: 3rem;
-        }
-
-        .card {
+        } */
+        
+        /* .card {
           margin: 1rem;
           flex-basis: 45%;
           padding: 1.5rem;
@@ -105,35 +143,7 @@ export default function Home() {
           border: 1px solid #eaeaea;
           border-radius: 10px;
           transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
+        } */
         }
       `}</style>
 
@@ -152,6 +162,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-    </>
   )
 }
